@@ -47,7 +47,6 @@ function App() {
 
     return (
         <div className="App">
-            <Text>{process.env.REACT_APP_TEST}</Text>
             <FormSection getResponse={getResponse} />
             <AnswerSection answers={answers} loading={loading} />
         </div>
