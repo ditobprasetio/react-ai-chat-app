@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormSection from "./components/Form";
 import AnswerSection from "./components/Answer";
+import { Text } from "@chakra-ui/react";
 
 function App() {
     const [answers, setAnswers] = useState("");
@@ -46,6 +47,7 @@ function App() {
 
     return (
         <div className="App">
+            <Text>{process.env.REACT_APP_TEST}</Text>
             <FormSection getResponse={getResponse} />
             <AnswerSection answers={answers} loading={loading} />
         </div>
