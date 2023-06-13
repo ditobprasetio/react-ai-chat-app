@@ -1,7 +1,6 @@
 import { useState } from "react";
 import FormSection from "./components/Form";
 import AnswerSection from "./components/Answer";
-// import { Text } from "@chakra-ui/react";
 
 function App() {
     const [answers, setAnswers] = useState("");
