@@ -8,11 +8,11 @@ const AnswerSection = ({ answers, loading }) => {
                 {loading && (
                     <Box
                         w="100%"
-                        my="4px"
+                        my="8px"
                         display="flex"
                         justifyContent="center"
                     >
-                        <Text>Loading ...</Text>
+                        <Text>Generating answer... Please Wait...</Text>
                     </Box>
                 )}
                 <Box
@@ -21,7 +21,7 @@ const AnswerSection = ({ answers, loading }) => {
                     alignItems="center"
                     mt="10px"
                 >
-                    {!answers ? (
+                    {answers.length === 0 ? (
                         <Box p="20px">
                             <Text fontSize="2xl">Ask me anything...</Text>
                         </Box>
