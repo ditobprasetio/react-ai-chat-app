@@ -26,8 +26,6 @@ const ChatCompletion = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(question);
-                console.log(data);
                 setLoading(false);
                 setAnswers([
                     {

@@ -23,7 +23,7 @@ const AnswerSection = ({ answers, loading }) => {
                 >
                     {answers.length === 0 ? (
                         <Box p="20px">
-                            <Text fontSize="2xl">Ask me anything...</Text>
+                            <Text fontSize="xl">Ask me anything...</Text>
                         </Box>
                     ) : (
                         <Box w="100%">

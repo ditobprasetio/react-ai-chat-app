@@ -23,7 +23,7 @@ const ImageCard = ({ images, loading }) => {
                 >
                     {!images ? (
                         <Box p="20px">
-                            <Text fontSize="2xl">Generate your image...</Text>
+                            <Text fontSize="xl">Ask me anything...</Text>
                         </Box>
                     ) : (
                         <Box w="100%" my="2">

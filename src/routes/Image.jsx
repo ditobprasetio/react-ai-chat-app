@@ -22,8 +22,6 @@ const ImageGenerator = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(prompt);
-                console.log(data);
                 setLoading(false);
                 setImages({
                     prompt,
