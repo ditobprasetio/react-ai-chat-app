@@ -8,29 +8,32 @@ const ChatCompletion = () => {
 
     const getResponse = async (question, setQuestion) => {
         setLoading(true);
-        fetch("https://api.openai.com/v1/completions", {
+        fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: "Bearer " + process.env.REACT_APP_OPENAI_API_KEY,
             },
             body: JSON.stringify({
-                model: "text-davinci-003",
-                prompt: question,
+                model: "gpt-4",
                 max_tokens: 100,
-                temperature: 0,
+                temperature: 1,
                 top_p: 1,
                 n: 1,
-                stream: false,
+                messages: [
+                    { role: "system", content: "You are a helpful assistant." },
+                    { role: "user", content: question },
+                ],
             }),
         })
             .then((res) => res.json())
             .then((data) => {
                 setLoading(false);
+                console.log(data);
                 setAnswers([
                     {
                         question,
-                        answer: data.choices[0].text,
+                        answer: data.choices[0].message.content,
                     },
                     ...answers,
                 ]);
