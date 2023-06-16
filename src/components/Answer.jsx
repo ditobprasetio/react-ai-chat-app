@@ -27,16 +27,20 @@ const AnswerSection = ({ answers, loading }) => {
                         </Box>
                     ) : (
                         <Box w="100%">
-                            {answers.map((answer) => {
+                            {answers.map((answer, index) => {
                                 return (
-                                    <Box key={answer?.question} w="100%" my="2">
+                                    <Box key={index} w="100%" my="16px">
                                         <Box
                                             p="10px"
                                             w="100%"
                                             minH="50px"
+                                            mt="16px"
                                             bgColor="#ca228f"
                                         >
-                                            <Text>{answer.question}</Text>
+                                            <Text>
+                                                Q{answers.length - index}:
+                                                {answer.question}
+                                            </Text>
                                         </Box>
                                         <Box
                                             p="10px"
